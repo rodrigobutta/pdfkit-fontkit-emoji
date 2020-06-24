@@ -9,6 +9,6 @@ coverage/
 data/*
 dist/
 lib
-node_modules
+node_modules/
 temp/
 exported/
