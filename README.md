@@ -4,6 +4,6 @@
 `npm i`
 
 ## Run and watch
-'npm run start`
+`npm run start`
 
 --> localhost:9090
