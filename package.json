@@ -1,0 +1,16 @@
+{
+  "name": "fontkit-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js localhost 9090"
+  },
+  "dependencies": {
+    "fontkit": "1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}
