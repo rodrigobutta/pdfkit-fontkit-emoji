@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.eslintcache
+.nyc_output
+*.tgz
+**/.env
+artifacts
+coverage/
+data/*
+dist/
+lib
+node_modules
+temp/
+exported/
