@@ -8,26 +8,24 @@ PDFDocument.prototype.addSVG = function(svg, x, y, options) {
 };
 
 module.exports = function makePdf() {
+    console.log('makePDF');
 
     const doc = new PDFDocument;
     doc.pipe(fs.createWriteStream('./output.pdf'));
 
-    magic(doc, 'Rodrigo Eduardo Butta', 0, 100);
+    doc.font('./fonts/proxima_ssv/ProximaNova-Regular.otf')
+    doc.text(' ',0,0); // NEEDED because doc without any text gives error on first svg print
+
+    // magic(doc, 'Rodrigo Eduardo Butta', 0, 100);
     magic(doc, 'Some super emojis 🙈 merged🙅🏻‍♀️with🙅🏾‍♀text', 0, 150);
+    // magic(doc, '🙈👋🤚🖐✋🖖👌🤏🤞🤟🤘🤙👈👉👆🖕', 0, 200);
+    // magic(doc, '✋', 0, 250);
     
-    // Occidental
-    magic(doc, 'CJK Tests', 0, 250);
+    // magic(doc, 'CJK Tests', 0, 300); // Occidental
+    // magic(doc, '廣國理頭當油笑市上造史人去節信全就人前', 0, 350); // Chinese
+    // magic(doc, '回編ム過得けフド庁62第1気わやお金盛かみ美株クケキニ可象ぴげりち両善ぐ安', 0, 400); // Japanese v1
 
-    // Chinese
-    magic(doc, '廣國理頭當油笑市上造史人去節信全就人前', 0, 300);
-
-    // Japanese v1
-    magic(doc, '回編ム過得けフド庁62第1気わやお金盛かみ美株クケキニ可象ぴげりち両善ぐ安', 0, 400);
-
-    // BW Emoji
-    // doc.font('./fonts/NotoEmoji-Regular.ttf')
-    // .fontSize(25)
-    // .text('🙈👋🤚🖐✋🖖👌🤏✌️🤞🤟🤘🤙👈👉👆🖕', 0, 500);
+    // doc.font('./fonts/NotoEmoji-Regular.ttf').text('🙈👋🤚🖐✋🖖👌🤏✌️🤞🤟🤘🤙👈👉👆🖕', 0, 500); // BW Emoji
 
     // doc.addPage()
     // .fillColor("blue")

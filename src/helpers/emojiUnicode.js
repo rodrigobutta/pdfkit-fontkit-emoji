@@ -1,7 +1,3 @@
-function emojiUnicode (input) {
-    return emojiUnicode.raw(input).split(' ').map(val => parseInt(val).toString(16)).slice(0, 4).join('_');
-}
-
 /**
  * Get the unicode code points of an emoji in base 16.
  *
@@ -9,7 +5,8 @@ function emojiUnicode (input) {
  * @param {String} input The emoji character.
  * @returns {String} The unicode code points.
  */
-emojiUnicode.raw = function (input) {
+module.exports = function emojiUnicode(input) {
+
     if (input.length === 1) {
         return input.charCodeAt(0).toString();
     }
@@ -39,5 +36,3 @@ emojiUnicode.raw = function (input) {
 
     return '';
 };
-
-module.exports = emojiUnicode;
